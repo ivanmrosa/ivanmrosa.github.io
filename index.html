@@ -9,7 +9,7 @@
 <body>
     <h4>Esta é a landing page</h4>
     <section class="formulario">
-        <form method="post" action="http://localhost:8080/post-landing-page">
+        <form id="#form">
             <div>
                 <label for="nome">Primeiro nome</label>
                 <input type="text" id="nome" />
@@ -28,7 +28,7 @@
                 <input type="tel" id="telefone" />
             </div>
             <input type="hidden" id="codigo_campanha_facebook">
-            <input type="submit" />
+            <button type="button" id="enviar">Enviar</button>
         </form>
     </section>
 
@@ -55,10 +55,17 @@
             };
 
             var params =  getURLParameters();
+            
             if(params.utm_source){
                 $("#codigo_campanha_facebook").val(params.utm_source);
             }
+          
             
+            $("#enviar").click(function(){
+                $.post("http://localhost:8080/post-landing-page",  $("#form").serialize()).done(function(response){
+                    alert("Enviado!");
+                });
+            });
         })
     </script>
 </body>

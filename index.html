@@ -58,12 +58,12 @@
 
             $("#enviar").click(function () {
                 var dataType = 'application/json; charset=utf-8';
-                var data = {
+                var data = JSON.stringify({
                     nomeCompleto: $("nomeCompleto").val(),
                     email: $("email").val(),
                     telefone: $("telefone").val(),
                     idDaCampanhaNoFacebook: $("idDaCampanhaNoFacebook").val()
-                }
+                });
 
                 $.ajax({
                     type: 'POST',

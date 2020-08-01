@@ -75,14 +75,14 @@
                         try {
                             var jResult = JSON.parse(this.responseText);    
                         } catch (error) {
-                            var jResult = false;
+                            var jResult = {ok:false, mensagem: error};
                         }
                         
                         
-                        if(jResult === true){
+                        if(jResult.ok === true){
                             alert('Dados inseridos com sucesso');
                         }else{
-                            alert(this.responseText);
+                            alert(jResult.mensagem);
                         }
                     }
                 });

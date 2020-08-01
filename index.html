@@ -32,7 +32,7 @@
         window.addEventListener('load', function () {
             var getURLParameters = function () {
                 var params = {};
-                var splited = window.location.split('?');
+                var splited = window.location.href.split('?');
 
                 if (splited.length > 0) {
                     if (splited[1]) {

@@ -50,31 +50,34 @@
                 return (params);
             };
 
-            var params =  getURLParameters();
-            
-            if(params.utm_source){
+            var params = getURLParameters();
+
+            if (params.utm_source) {
                 $("#idDaCampanhaNoFacebook").val(params.utm_source);
             }
-            
-            var dataType = 'application/json; charset=utf-8';
-            var data = {
-                nomeCompleto: $("nomeCompleto").val(),
-                email: $("email").val(),
-                telefone: $("telefone").val(),
-                idDaCampanhaNoFacebook: $("idDaCampanhaNoFacebook").val()
-            }
-                        
-            $.ajax({
-                type: 'POST',
-                url: 'http://localhost:5001/post-landing-page/adicionar-pessoa',
-                dataType: 'json',
-                contentType: dataType,
-                data: data,
-                success: function(result) {
-                    console.log('Recebido: ');
-                    console.log(result);
+
+            $("#enviar").click(function () {
+                var dataType = 'application/json; charset=utf-8';
+                var data = {
+                    nomeCompleto: $("nomeCompleto").val(),
+                    email: $("email").val(),
+                    telefone: $("telefone").val(),
+                    idDaCampanhaNoFacebook: $("idDaCampanhaNoFacebook").val()
                 }
-            });                              
+
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://localhost:5001/post-landing-page/adicionar-pessoa',
+                    dataType: 'json',
+                    contentType: dataType,
+                    data: data,
+                    success: function (result) {
+                        console.log('Recebido: ');
+                        console.log(result);
+                    }
+                });
+            })
+
         })
     </script>
 </body>

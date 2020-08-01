@@ -72,7 +72,12 @@
 
                 xhr.addEventListener("readystatechange", function () {
                     if (this.readyState === 4) {
-                        console.log(this.responseText);
+                        var jResult = JSON.parse(this.responseText);
+                        if(jResult === true){
+                            alert('Dados inseridos com sucesso');
+                        }else{
+                            alert(this.responseText);
+                        }
                     }
                 });
 

@@ -62,7 +62,7 @@
           
             
             $("#enviar").click(function(){
-                $.post("http://localhost:8080/post-landing-page",  $("#form").serialize()).done(function(response){
+                $.post("http://localhost:8080/post-landing-page/adicionar-pessoa",  $("#form").serialize()).done(function(response){
                     alert("Enviado!");
                 });
             });

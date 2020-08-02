@@ -23,6 +23,13 @@
                 <label for="telefone">Telefone</label>
                 <input type="tel" id="telefone" />
             </div>
+            <div>
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem">
+
+                </textarea>
+            </div>
+
             <input type="hidden" id="idDaCampanhaNoFacebook">
             <button type="button" id="enviar">Enviar</button>
         </form>
@@ -65,7 +72,8 @@
                     nomeCompleto: getFormValue("nomeCompleto"),
                     email: getFormValue("email"),
                     telefone: getFormValue("telefone"),
-                    idDaCampanhaNoFacebook: getFormValue("idDaCampanhaNoFacebook")
+                    idDaCampanhaNoFacebook: getFormValue("idDaCampanhaNoFacebook"),
+                    mensagem: getFormValue("mensagem"),
                 });
 
                 var settings = {

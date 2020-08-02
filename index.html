@@ -74,13 +74,15 @@
 
                     try {
                         if (this.readyState == 4) {
-                            if (this.status == 200 || this.status == 201 || this.status == 204) {                                
-                                var jResult = JSON.parse(this.responseText);    
-                                if(jResult.ok === true){
+                            if (this.status == 200 || this.status == 201 || this.status == 204) {
+                                var jResult = JSON.parse(this.responseText);
+                                if (jResult.ok === true) {
                                     alert("Dados enviados com sucesso!");
+                                } else {
+                                    alert(jResult.mensagem);
                                 }
-                            } else {                                
-                                alert(jResult.mensagem);                                
+                            } else {
+                                alert(this.responseText);
                             }
                         }
                     } catch (e) {

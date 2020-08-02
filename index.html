@@ -54,7 +54,7 @@
                 document.getElementById("idDaCampanhaNoFacebook").setAttribute("value", params.utm_source);
             }
 
-            var getFormValue = function(fieldName){
+            var getFormValue = function (fieldName) {
                 return document.getElementById("form").elements.namedItem(fieldName).value;
             }
 
@@ -66,12 +66,28 @@
                     telefone: getFormValue("telefone"),
                     idDaCampanhaNoFacebook: getFormValue("idDaCampanhaNoFacebook")
                 });
-                
+
                 var xhr = new XMLHttpRequest();
                 xhr.withCredentials = true;
 
                 xhr.addEventListener("readystatechange", function () {
-                    if (this.readyState === 4) {
+
+                    try {
+                        if (this.readyState == 4) {
+                            if (this.status == 200 || this.status == 201 || this.status == 204) {                                
+                                var jResult = JSON.parse(this.responseText);    
+                                if(jResult.ok === true){
+                                    alert("Dados enviados com sucesso!");
+                                }
+                            } else {                                
+                                alert(jResult.mensagem);                                
+                            }
+                        }
+                    } catch (e) {
+                        alert(e);
+                    }
+
+                    /*if (this.readyState === 4) {
                         try {
                             var jResult = JSON.parse(this.responseText);    
                         } catch (error) {
@@ -84,7 +100,7 @@
                         }else{
                             alert(jResult.mensagem);
                         }
-                    }
+                    }*/
                 });
 
                 xhr.open("POST", "http://localhost:5001/post-landing-page/adicionar-pessoa");

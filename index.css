@@ -1,0 +1,102 @@
+/* Estilos para a página do programador */
+
+/* Estilos para o cabeçalho */
+header {
+	background-color: #fff;
+	padding: 20px 0;
+	border-bottom: 1px solid #ddd;
+}
+header a {
+	color: #000;
+	text-decoration: none;
+}
+header .logo {
+	display: block;
+	margin: 0 auto;
+	width: 130px;
+	height: 45px;
+	background-image: url("logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+header nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: right;
+}
+header nav ul li {
+	display: inline-block;
+	margin-left: 30px;
+}
+header nav ul li:first-child {
+	margin-left: 0;
+}
+header nav ul li a {
+	color: #999;
+	text-decoration: none;
+	font-size: 16px;
+	transition: all 0.2s ease;
+}
+header nav ul li a:hover {
+	color: #000;
+}
+
+/* Estilos para as seções */
+section {
+	padding: 100px 0;
+	background-color: #f9f9f9;
+}
+section h2 {
+	margin-top: 0;
+	font-size: 48px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+section ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+}
+section li {
+	display: inline-block;
+	margin-right: 50px;
+	vertical-align: top;
+}
+section li:last-child {
+	margin-right: 0;
+}
+section li img {
+	display: block;
+	margin: 0 auto;
+	width: 120px;
+	height: 120px;
+	margin-bottom: 20px;
+	border-radius: 50%;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+section li h3 {
+	margin: 0;
+	font-size: 24px;
+	margin-bottom: 10px;
+}
+section li p {
+	margin: 0;
+	font-size: 18px;
+	color: #999;
+	line-height: 1.5;
+}
+
+/* Estilos para o rodapé */
+footer {
+	background-color: #000;
+	color: #fff;
+	padding: 50px 0;
+	text-align: center;
+}
+footer p {
+	margin: 0;
+	font-size: 18px;
+	line-height: 1.5;
+}
